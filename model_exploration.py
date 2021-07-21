@@ -14,6 +14,7 @@
 import streamlit as st
 import pandas as pd
 import numpy as np
+import plotly.graph_objects as go
 
 #Funciones de filtrado de datos
 from filtering import load_data
@@ -49,4 +50,20 @@ if uploaded_file is not None:
     data = load_data(uploaded_file)
     st.write(data)
     
-st.plotly_chart(data)
+fig = go.Figure()
+x=np.linspace(0,len(data),len(data))
+fig.add_trace(
+        go.Scatter(
+            x=x,
+            y=data,
+            mode='lines',
+            name=f'file {filename}'
+        )
+    )
+fig.update_layout(
+    title='Conjunto de señales recopiladas por carpeta',
+    xaxis_title='Tiempo (t = 5s, 1k/s muestras)',
+    yaxis_title='Amplitud',
+    width=950, height=600
+)
+st.plotly_chart(fig)
