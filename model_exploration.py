@@ -20,6 +20,11 @@ from filtering import load_data
 from filtering import save_data
 from filtering import apply_filter
 
+file="100-0.txt"
+with open(file, 'rt') as f:
+            data = f.read().split('\n')[:-1]
+            data = np.array(data).astype(np.float32)
+
 # Sidebar
 st.sidebar.title("Selección de modelo")
 st.sidebar.markdown(
