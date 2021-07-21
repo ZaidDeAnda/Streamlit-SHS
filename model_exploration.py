@@ -49,4 +49,4 @@ if uploaded_file is not None:
     data = load_data(uploaded_file)
     st.write(data)
     
-st.line_chart(data)
+st.plotly_chart(data)
