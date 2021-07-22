@@ -46,7 +46,7 @@ uploaded_file = st.file_uploader("Escoge el archivo", type='txt')
 if uploaded_file is not None:
     stringio = StringIO(uploaded_file.getvalue().decode("utf-8"))
     string_data = stringio.read()
-    data = string_data.read().split('\n')[:-1]
+    data = string_data.split('\n')[:-1]
     data = np.array(data).astype(np.float32)
 
 st.write(data)
@@ -69,3 +69,5 @@ fig.update_layout(
     width=950, height=600
 )
 st.plotly_chart(fig)
+
+st.write(data)
