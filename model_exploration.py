@@ -41,7 +41,7 @@ selector_modelos = st.sidebar.selectbox(
     modelos
 )
 
-uploaded_file = st.file_uploader("Escoge el archivo")
+uploaded_file = st.file_uploader("Escoge el archivo", type='txt')
 if uploaded_file is not None:
     #data = load_data(uploaded_file)
     #st.write(data)
