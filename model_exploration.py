@@ -78,7 +78,7 @@ st.header("Predicción")
 modelos=[]
 
 for i in range(1,6):
-  modelos.append(tf.keras.models.load_model('modelos/modelo'+str(i)))
+  modelos.append(tf.keras.models.load_model('modelos/Modelos SHS/modelo'+str(i)))
 
 if selector_modelos == "modelo 1":
     predict = modelos[0].predict(np.reshape(data, (1,1800)))
