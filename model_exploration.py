@@ -45,9 +45,11 @@ uploaded_file = st.file_uploader("Escoge el archivo", type='txt')
 if uploaded_file is not None:
     read_data = uploaded_file.read()
     #st.write(data)
-    with open(uploaded_file) as f:
+    with open(read_data) as f:
         data = f.readlines()
-    
+
+st.write(data)
+
 fig = go.Figure()
 
 x=np.linspace(0,len(data),len(data))
