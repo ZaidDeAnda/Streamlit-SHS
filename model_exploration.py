@@ -14,6 +14,7 @@
 import streamlit as st
 import pandas as pd
 import numpy as np
+from io import StringIO
 import plotly.graph_objects as go
 
 #Funciones de filtrado de datos
@@ -43,10 +44,11 @@ selector_modelos = st.sidebar.selectbox(
 
 uploaded_file = st.file_uploader("Escoge el archivo", type='txt')
 if uploaded_file is not None:
-    read_data = uploaded_file.read()
-    #st.write(data)
-    with open(read_data) as f:
-        data = f.readlines()
+    stringio = StringIO(uploaded_file.getvalue().decode("utf-8"))
+    string_data = stringio.read()
+    #with open(read_data, 'rt') as f:
+    #    data = f.read().split('\n')[:-1]
+    #    data = np.array(data).astype(np.float32)
 
 st.write(data)
 
