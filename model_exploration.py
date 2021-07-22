@@ -16,6 +16,7 @@ import pandas as pd
 import numpy as np
 from io import StringIO
 import plotly.graph_objects as go
+import tensorflow as tf
 
 #Funciones de filtrado de datos
 from filtering import load_data
