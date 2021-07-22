@@ -64,7 +64,7 @@ fig.add_trace(
     )
 fig.update_layout(
     title='Conjunto de señales recopiladas por carpeta',
-    xaxis_title='Tiempo (t = 5s, 1k/s muestras)',
+    xaxis_title='Tiempo',
     yaxis_title='Amplitud',
     width=950, height=600
 )
@@ -74,13 +74,18 @@ st.write(data)
 
 st.header("Predicción")
 
+modelos=[]
+
+for i in range(1,6):
+  modelos.append(tf.keras.models.load_model('gdrive/MyDrive/Modelos SHS/modelo'+str(i)))
+
 if selector_modelos == "modelo 1":
-    predict = modelo1.predict(np.reshape(data, (1,1800)))
+    predict = modelos[0].predict(np.reshape(data, (1,1800)))
     st.write(f"La predicción del {selector_modelos} es predict")
 elif selector_modelos == "modelo 2":
-    predict = modelo2.predict(np.reshape(data, (1,1800)))
+    predict = modelos[1].predict(np.reshape(data, (1,1800)))
     st.write(f"La predicción del {selector_modelos} es predict")
 elif selector_modelos == "modelo 3":
-    predict = modelo3.predict(np.reshape(data, (1,1800)))
+    predict = modelos[2].predict(np.reshape(data, (1,1800)))
     st.write(f"La predicción del {selector_modelos} es predict")
 
