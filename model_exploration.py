@@ -51,13 +51,14 @@ if uploaded_file is not None:
     st.write(data)
     
 fig = go.Figure()
+
 x=np.linspace(0,len(data),len(data))
+
 fig.add_trace(
         go.Scatter(
             x=x,
             y=data,
-            mode='lines',
-            name=f'file {filename}'
+            mode='lines'
         )
     )
 fig.update_layout(
