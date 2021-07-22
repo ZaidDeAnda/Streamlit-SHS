@@ -45,6 +45,8 @@ uploaded_file = st.file_uploader("Escoge el archivo")
 if uploaded_file is not None:
     data = load_data(uploaded_file)
     st.write(data)
+    with open(uploaded_file) as f:
+        data = f.readlines()
     
 fig = go.Figure()
 
