@@ -43,7 +43,7 @@ selector_modelos = st.sidebar.selectbox(
 
 uploaded_file = st.file_uploader("Escoge el archivo", type='txt')
 if uploaded_file is not None:
-    #data = load_data(uploaded_file)
+    read_data = uploaded_file.read()
     #st.write(data)
     with open(uploaded_file) as f:
         data = f.readlines()
