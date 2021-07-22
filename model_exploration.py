@@ -71,3 +71,16 @@ fig.update_layout(
 st.plotly_chart(fig)
 
 st.write(data)
+
+st.header("Predicción")
+
+if selector_modelos == "modelo 1":
+    predict = modelo1.predict(np.reshape(data, (1,1800)))
+    st.write(f"La predicción del {selector_modelos} es predict")
+elif selector_modelos == "modelo 2":
+    predict = modelo2.predict(np.reshape(data, (1,1800)))
+    st.write(f"La predicción del {selector_modelos} es predict")
+elif selector_modelos == "modelo 3":
+    predict = modelo3.predict(np.reshape(data, (1,1800)))
+    st.write(f"La predicción del {selector_modelos} es predict")
+
