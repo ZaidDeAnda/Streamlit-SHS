@@ -46,9 +46,8 @@ uploaded_file = st.file_uploader("Escoge el archivo", type='txt')
 if uploaded_file is not None:
     stringio = StringIO(uploaded_file.getvalue().decode("utf-8"))
     string_data = stringio.read()
-    #with open(read_data, 'rt') as f:
-    #    data = f.read().split('\n')[:-1]
-    #    data = np.array(data).astype(np.float32)
+    data = string_data.read().split('\n')[:-1]
+    data = np.array(data).astype(np.float32)
 
 st.write(data)
 
