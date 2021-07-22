@@ -43,6 +43,7 @@ selector_modelos = st.sidebar.selectbox(
 
 uploaded_file = st.file_uploader("Escoge el archivo")
 if uploaded_file is not None:
+    stringio = StringIO(uploaded_file.getvalue().decode("utf-8"))
     # To read file as string:
     string_data = stringio.read()
     st.write(string_data)
