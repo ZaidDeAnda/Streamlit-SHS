@@ -82,11 +82,11 @@ for i in range(1,6):
 
 if selector_modelos == "modelo 1":
     predict = modelos[0].predict(np.reshape(data, (1,1800)))
-    st.write(f"La predicción del {selector_modelos} es predict")
+    st.write(f"La predicción del {selector_modelos} es {predict}")
 elif selector_modelos == "modelo 2":
     predict = modelos[1].predict(np.reshape(data, (1,1800)))
-    st.write(f"La predicción del {selector_modelos} es predict")
+    st.write(f"La predicción del {selector_modelos} es {predict}")
 elif selector_modelos == "modelo 3":
     predict = modelos[2].predict(np.reshape(data, (1,1800)))
-    st.write(f"La predicción del {selector_modelos} es predict")
+    st.write(f"La predicción del {selector_modelos} es {predict}")
 
